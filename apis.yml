@@ -1,0 +1,38 @@
+aid: sozu
+name: Sozu
+description: >-
+  Sozu is an open-source, fast and lightweight HTTP reverse proxy written in Rust for high-performance traffic management.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Proxy
+  - Reverse Proxy
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/sozu/refs/heads/main/apis.yml
+created: '2026-03-27'
+modified: '2026-03-27'
+specificationVersion: '0.19'
+apis:
+  - aid: sozu:sozu
+    name: Sozu
+    description: >-
+      Sozu is an open-source, fast and lightweight HTTP reverse proxy written in Rust for high-performance traffic management.
+    humanURL: https://www.sozu.io/
+    tags:
+      - Proxy
+      - Reverse Proxy
+    properties:
+      - type: Documentation
+        url: https://docs.sozu.io/
+      - type: Getting Started
+        url: https://docs.sozu.io/getting-started/
+common:
+  - type: Website
+    url: https://www.sozu.io/
+  - type: Documentation
+    url: https://docs.sozu.io/
+  - type: GitHub Organization
+    url: https://github.com/sozu-proxy/sozu
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
