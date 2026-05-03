@@ -1,0 +1,104 @@
+vocabulary:
+  name: Sozu Vocabulary
+  description: >-
+    Domain vocabulary for the Sōzu HTTP reverse proxy, covering load balancing,
+    traffic management, TLS termination, runtime configuration, and Rust-based
+    systems programming concepts used in the sozu-proxy project.
+  tags:
+    - Proxy
+    - Reverse Proxy
+    - Load Balancing
+    - Rust
+    - Open Source
+  terms:
+    - term: Reverse Proxy
+      definition: >-
+        A server that sits in front of one or more backend servers, intercepting
+        client requests and forwarding them to the appropriate upstream service,
+        providing load balancing, TLS termination, and traffic management.
+      category: Networking
+    - term: Cluster
+      definition: >-
+        A logical grouping of backend application instances in Sozu that receive
+        forwarded traffic. Clusters can be added, removed, or modified at runtime
+        without interrupting existing connections.
+      category: Configuration
+    - term: Backend
+      definition: >-
+        An individual upstream server instance within a Sozu cluster, identified
+        by IP address and port, to which the proxy forwards incoming requests.
+      category: Configuration
+    - term: Frontend
+      definition: >-
+        A Sozu configuration entity binding a network listener (IP, port, protocol)
+        to a cluster, defining how incoming connections are matched and routed.
+      category: Configuration
+    - term: Listener
+      definition: >-
+        A network socket configuration in Sozu that accepts incoming connections
+        on a specified IP address, port, and protocol (HTTP or HTTPS).
+      category: Configuration
+    - term: Runtime Configuration
+      definition: >-
+        Sozu's core capability to accept configuration changes (adding backends,
+        updating certificates, modifying routes) while actively serving traffic,
+        without requiring a process restart.
+      category: Operations
+    - term: Protobuf IPC
+      definition: >-
+        The inter-process communication mechanism used by Sozu, where external
+        tools send Protocol Buffer (protobuf) encoded messages over a Unix socket
+        to configure and control the proxy at runtime.
+      category: Protocol
+    - term: Unix Socket
+      definition: >-
+        The communication channel used by the Sozu command interface, providing
+        a secure local socket path for sending configuration commands to the
+        proxy process.
+      category: Protocol
+    - term: TLS Termination
+      definition: >-
+        The process of decrypting inbound HTTPS connections at the proxy level,
+        allowing backend servers to receive unencrypted HTTP traffic while clients
+        communicate securely.
+      category: Security
+    - term: SNI (Server Name Indication)
+      definition: >-
+        A TLS extension that allows the Sozu proxy to select the appropriate
+        certificate for a connection based on the hostname requested by the client,
+        enabling multiple virtual hosts on a single IP address.
+      category: Security
+    - term: ACME
+      definition: >-
+        Automated Certificate Management Environment — a protocol used by Sozu
+        to automatically request, renew, and manage TLS certificates from certificate
+        authorities like Let's Encrypt.
+      category: Security
+    - term: Load Balancing
+      definition: >-
+        The distribution of incoming network requests across multiple backend server
+        instances in a cluster to optimize resource utilization and prevent overload.
+      category: Networking
+    - term: Worker Process
+      definition: >-
+        One of the worker processes managed by the Sozu main/supervisor process
+        that handles actual HTTP/HTTPS traffic forwarding and connection management.
+      category: Architecture
+    - term: sozu-command-lib
+      definition: >-
+        The Rust crate that contains the protobuf IPC schema, configuration parser,
+        replicated state structures, channels, and file descriptor passing helpers
+        used by both the Sozu library and binary.
+      category: Development
+    - term: Immutable Infrastructure
+      definition: >-
+        An operational paradigm where servers are never modified after deployment
+        but replaced with new instances; Sozu's runtime configurability supports
+        this model by enabling zero-downtime updates.
+      category: Operations
+    - term: Hot Reload
+      definition: >-
+        Sozu's ability to update itself and its configuration while continuing
+        to handle traffic, passing file descriptors between processes to maintain
+        active connections.
+      category: Operations

@@ -1,0 +1,82 @@
+{
+  "title": "Sozu Proxy Configuration Structure",
+  "description": "Hierarchical structure of the Sōzu HTTP reverse proxy runtime configuration, including clusters, frontends, backends, listeners, and certificate management.",
+  "type": "object",
+  "structure": {
+    "proxyConfiguration": {
+      "description": "Top-level Sozu proxy configuration state",
+      "fields": {
+        "proxyVersion": "string — Sozu binary version",
+        "workerCount": "integer — number of worker processes",
+        "logLevel": "string — trace | debug | info | warn | error"
+      },
+      "children": {
+        "listeners": {
+          "description": "Network listener bindings",
+          "type": "array",
+          "items": {
+            "address": "string — IP:port e.g. 0.0.0.0:80",
+            "protocol": "string — HTTP | HTTPS | TCP",
+            "maxConnections": "integer",
+            "backlog": "integer"
+          }
+        },
+        "clusters": {
+          "description": "Backend application clusters",
+          "type": "array",
+          "items": {
+            "cluster_id": "string — unique cluster identifier",
+            "sticky_session": "boolean",
+            "https_redirect": "boolean",
+            "load_balancing": "string — RoundRobin | Random | LeastConnections | PowerOfTwo",
+            "proxy_protocol": "string — None | V1 | V2",
+            "backends": {
+              "type": "array",
+              "items": {
+                "backend_id": "string",
+                "address": "string — IP or hostname",
+                "port": "integer — 1-65535",
+                "weight": "integer — load balancing weight",
+                "connection_timeout": "integer — milliseconds"
+              }
+            }
+          }
+        },
+        "frontends": {
+          "description": "Request routing rules mapping hostnames/paths to clusters",
+          "type": "array",
+          "items": {
+            "route_id": "string",
+            "address": "string — IP:port listener",
+            "hostname": "string — Host header to match",
+            "path_prefix": "string — URL path prefix",
+            "cluster_id": "string — target cluster",
+            "https_redirect": "boolean",
+            "sticky_session": "boolean"
+          }
+        },
+        "certificates": {
+          "description": "TLS certificates for HTTPS frontends",
+          "type": "array",
+          "items": {
+            "domain": "string — primary hostname",
+            "alternativeNames": "array of strings — SANs",
+            "expiryDate": "datetime",
+            "fingerprint": "string — certificate fingerprint",
+            "acmeManaged": "boolean — auto-renewed via ACME"
+          }
+        },
+        "workers": {
+          "description": "Worker process status",
+          "type": "array",
+          "items": {
+            "workerId": "integer",
+            "pid": "integer",
+            "status": "string — Running | Stopping | Stopped",
+            "activeConnections": "integer"
+          }
+        }
+      }
+    }
+  }
+}

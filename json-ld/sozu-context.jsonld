@@ -1,0 +1,82 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "sozu": "https://api-evangelist.github.io/sozu/vocab#",
+
+    "ReverseProxy": "schema:SoftwareApplication",
+    "Cluster": "sozu:Cluster",
+    "Backend": "sozu:Backend",
+    "Frontend": "sozu:Frontend",
+    "Listener": "sozu:Listener",
+    "Certificate": "schema:DigitalDocument",
+    "Worker": "sozu:Worker",
+    "ProxyConfiguration": "schema:StructuredValue",
+
+    "clusterId": {
+      "@id": "sozu:clusterId",
+      "@type": "xsd:string"
+    },
+    "clusterName": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "backendId": {
+      "@id": "sozu:backendId",
+      "@type": "xsd:string"
+    },
+    "backendHost": {
+      "@id": "sozu:backendHost",
+      "@type": "xsd:string"
+    },
+    "backendPort": {
+      "@id": "sozu:backendPort",
+      "@type": "xsd:integer"
+    },
+    "frontendId": {
+      "@id": "sozu:frontendId",
+      "@type": "xsd:string"
+    },
+    "hostname": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "pathPrefix": {
+      "@id": "sozu:pathPrefix",
+      "@type": "xsd:string"
+    },
+    "listenAddress": {
+      "@id": "sozu:listenAddress",
+      "@type": "xsd:string"
+    },
+    "listenPort": {
+      "@id": "sozu:listenPort",
+      "@type": "xsd:integer"
+    },
+    "protocol": {
+      "@id": "sozu:protocol",
+      "@type": "xsd:string"
+    },
+    "certificateDomain": {
+      "@id": "sozu:certificateDomain",
+      "@type": "xsd:string"
+    },
+    "certificateExpiry": {
+      "@id": "schema:expires",
+      "@type": "xsd:dateTime"
+    },
+    "workerPid": {
+      "@id": "sozu:workerPid",
+      "@type": "xsd:integer"
+    },
+    "workerStatus": {
+      "@id": "sozu:workerStatus",
+      "@type": "xsd:string"
+    },
+    "connectionCount": {
+      "@id": "sozu:connectionCount",
+      "@type": "xsd:integer"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/sozu/json-schema/sozu-frontend-schema.json",
+  "title": "Sozu Frontend Configuration",
+  "description": "Configuration for a frontend routing rule in the Sōzu HTTP reverse proxy. A frontend binds an incoming request pattern (hostname + path prefix) to a backend cluster.",
+  "type": "object",
+  "properties": {
+    "route_id": {
+      "type": "string",
+      "description": "Unique identifier for this frontend route.",
+      "example": "frontend-myapp-443"
+    },
+    "address": {
+      "type": "string",
+      "description": "IP:port listener address for this frontend.",
+      "example": "0.0.0.0:443"
+    },
+    "hostname": {
+      "type": "string",
+      "description": "HTTP Host header value to match for this frontend route.",
+      "example": "myapp.example.com"
+    },
+    "path_prefix": {
+      "type": "string",
+      "description": "URL path prefix to match for this frontend route (empty string matches all paths).",
+      "example": "/api"
+    },
+    "cluster_id": {
+      "type": "string",
+      "description": "Identifier of the backend cluster to forward matched requests to."
+    },
+    "https_redirect": {
+      "type": "boolean",
+      "description": "Whether to redirect HTTP requests on this frontend to HTTPS.",
+      "default": false
+    },
+    "sticky_session": {
+      "type": "boolean",
+      "description": "Whether to enable sticky sessions for this frontend.",
+      "default": false
+    },
+    "certificate": {
+      "type": "object",
+      "description": "TLS certificate configuration for HTTPS frontends.",
+      "properties": {
+        "certificate": {
+          "type": "string",
+          "description": "PEM-encoded certificate."
+        },
+        "certificate_chain": {
+          "type": "string",
+          "description": "PEM-encoded certificate chain."
+        },
+        "key": {
+          "type": "string",
+          "description": "PEM-encoded private key."
+        }
+      }
+    }
+  },
+  "required": ["route_id", "address", "cluster_id"]
+}

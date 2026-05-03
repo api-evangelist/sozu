@@ -1,0 +1,23 @@
+{
+  "cluster_id": "my-web-app",
+  "sticky_session": false,
+  "https_redirect": true,
+  "load_balancing": "RoundRobin",
+  "proxy_protocol": "None",
+  "backends": [
+    {
+      "backend_id": "web-backend-1",
+      "address": "127.0.0.1",
+      "port": 8080,
+      "weight": 100,
+      "connection_timeout": 5000
+    },
+    {
+      "backend_id": "web-backend-2",
+      "address": "127.0.0.1",
+      "port": 8081,
+      "weight": 100,
+      "connection_timeout": 5000
+    }
+  ]
+}

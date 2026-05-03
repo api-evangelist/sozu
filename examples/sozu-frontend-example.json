@@ -1,0 +1,9 @@
+{
+  "route_id": "frontend-myapp-https",
+  "address": "0.0.0.0:443",
+  "hostname": "myapp.example.com",
+  "path_prefix": "",
+  "cluster_id": "my-web-app",
+  "https_redirect": false,
+  "sticky_session": false
+}

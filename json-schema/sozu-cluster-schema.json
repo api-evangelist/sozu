@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/sozu/json-schema/sozu-cluster-schema.json",
+  "title": "Sozu Cluster Configuration",
+  "description": "Configuration for a backend cluster in the Sōzu HTTP reverse proxy. A cluster groups multiple backend server instances that receive forwarded traffic from Sozu frontends.",
+  "type": "object",
+  "properties": {
+    "cluster_id": {
+      "type": "string",
+      "description": "Unique identifier for the cluster.",
+      "example": "my-app-cluster"
+    },
+    "sticky_session": {
+      "type": "boolean",
+      "description": "Whether to enable sticky session (session affinity) for this cluster.",
+      "default": false
+    },
+    "https_redirect": {
+      "type": "boolean",
+      "description": "Whether to redirect HTTP requests to HTTPS for this cluster.",
+      "default": false
+    },
+    "load_balancing": {
+      "type": "string",
+      "enum": ["RoundRobin", "Random", "LeastConnections", "PowerOfTwo"],
+      "description": "Load balancing algorithm for distributing requests across backends.",
+      "default": "RoundRobin"
+    },
+    "proxy_protocol": {
+      "type": "string",
+      "enum": ["None", "V1", "V2"],
+      "description": "PROXY protocol version to send to backends.",
+      "default": "None"
+    },
+    "backends": {
+      "type": "array",
+      "description": "List of backend server instances in this cluster.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "backend_id": {
+            "type": "string",
+            "description": "Unique identifier for this backend instance."
+          },
+          "address": {
+            "type": "string",
+            "description": "IP address or hostname of the backend server."
+          },
+          "port": {
+            "type": "integer",
+            "description": "TCP port of the backend server.",
+            "minimum": 1,
+            "maximum": 65535
+          },
+          "weight": {
+            "type": "integer",
+            "description": "Relative weight for load balancing (higher = more traffic).",
+            "minimum": 0,
+            "default": 100
+          },
+          "connection_timeout": {
+            "type": "integer",
+            "description": "Connection timeout to backend in milliseconds.",
+            "minimum": 0
+          }
+        },
+        "required": ["backend_id", "address", "port"]
+      }
+    }
+  },
+  "required": ["cluster_id"]
+}
