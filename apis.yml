@@ -39,7 +39,7 @@ apis:
         url: https://docs.sozu.io/
       - type: GitHub
         url: https://github.com/sozu-proxy/sozu
-      - type: Getting Started
+      - type: GettingStarted
         url: https://docs.sozu.io/getting-started/
       - type: Configuration
         url: https://github.com/sozu-proxy/sozu/blob/main/doc/configure.md
@@ -85,9 +85,9 @@ common:
     url: https://www.sozu.io/
   - type: Documentation
     url: https://docs.sozu.io/
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/sozu-proxy
-  - type: GitHub Repository
+  - type: GitHubRepository
     url: https://github.com/sozu-proxy/sozu
   - type: Releases
     url: https://github.com/sozu-proxy/sozu/releases
