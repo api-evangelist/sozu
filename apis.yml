@@ -81,6 +81,8 @@ apis:
       - type: GitHub
         url: https://github.com/sozu-proxy/sozu-command-futures
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/sozu-limited
   - type: Website
     url: https://www.sozu.io/
   - type: Documentation
