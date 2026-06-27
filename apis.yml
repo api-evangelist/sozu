@@ -45,9 +45,9 @@ apis:
         url: https://github.com/sozu-proxy/sozu/blob/main/doc/configure.md
       - type: How To Use
         url: https://github.com/sozu-proxy/sozu/blob/main/doc/how_to_use.md
-      - type: JSON Schema
+      - type: JSONSchema
         url: https://raw.githubusercontent.com/api-evangelist/sozu/refs/heads/main/json-schema/sozu-cluster-schema.json
-      - type: JSON Schema
+      - type: JSONSchema
         url: https://raw.githubusercontent.com/api-evangelist/sozu/refs/heads/main/json-schema/sozu-frontend-schema.json
   - aid: sozu:sozu-acme-api
     name: Sozu ACME Integration
@@ -91,13 +91,13 @@ common:
     url: https://github.com/sozu-proxy
   - type: GitHubRepository
     url: https://github.com/sozu-proxy/sozu
-  - type: Releases
+  - type: ReleaseNotes
     url: https://github.com/sozu-proxy/sozu/releases
   - type: Dashboard
     url: https://github.com/sozu-proxy/dashboard
   - type: Integration Tests
     url: https://github.com/sozu-proxy/sozu-integration-tests
-  - type: JSON-LD Context
+  - type: JSONLDContext
     url: https://raw.githubusercontent.com/api-evangelist/sozu/refs/heads/main/json-ld/sozu-context.jsonld
   - type: Vocabulary
     url: https://raw.githubusercontent.com/api-evangelist/sozu/refs/heads/main/vocabulary/sozu-vocabulary.yml
