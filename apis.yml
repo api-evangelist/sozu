@@ -81,6 +81,8 @@ apis:
       - type: GitHub
         url: https://github.com/sozu-proxy/sozu-command-futures
 common:
+  - type: DomainSecurity
+    url: security/sozu-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/sozu-limited
   - type: Website
