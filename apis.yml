@@ -1,4 +1,17 @@
 aid: sozu
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/sozu.png
 name: Sozu
 description: >-
   Sōzu is an open-source, fast and lightweight HTTP reverse proxy written in Rust,
