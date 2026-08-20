@@ -29,6 +29,12 @@ tags:
   - Reverse Proxy
   - Load Balancing
   - Rust
+  - Open-Source
+tags_raw:
+  - Proxy
+  - Reverse Proxy
+  - Load Balancing
+  - Rust
   - Open Source
 apis:
   - aid: sozu:sozu-command-api
