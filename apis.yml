@@ -1,4 +1,16 @@
 aid: sozu
+deliveryModel:
+  model: self-hosted
+  license: AGPL-3.0
+  open_source: true
+  commercial: false
+  callable_host: false
+  label: Self-hosted open source · you run it yourself
+  confidence: high
+  source:
+  - license
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
@@ -100,6 +112,10 @@ apis:
       - type: GitHub
         url: https://github.com/sozu-proxy/sozu-command-futures
 common:
+  - type: IssueTracker
+    url: https://github.com/sozu-proxy/sozu/issues
+  - type: ContributionGuide
+    url: https://github.com/sozu-proxy/sozu/blob/main/CONTRIBUTING.md
   - type: License
     name: AGPL-3.0
     url: https://github.com/sozu-proxy/sozu/blob/main/LICENSE
