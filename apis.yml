@@ -41,13 +41,14 @@ tags:
   - Reverse Proxy
   - Load Balancing
   - Rust
-  - Open-Source
+  - Open Source
 tags_raw:
   - Proxy
   - Reverse Proxy
   - Load Balancing
   - Rust
   - Open Source
+  - Open-Source
 apis:
   - aid: sozu:sozu-command-api
     name: Sozu Command API
