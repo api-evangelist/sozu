@@ -34,7 +34,7 @@ description: >-
   open-source organization on GitHub.
 url: https://raw.githubusercontent.com/api-evangelist/sozu/refs/heads/main/apis.yml
 created: '2026-03-27'
-modified: '2026-05-02'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 tags:
   - Proxy
@@ -113,6 +113,8 @@ apis:
       - type: GitHub
         url: https://github.com/sozu-proxy/sozu-command-futures
 common:
+  - url: https://www.sozu.io/blog/
+    type: Blog
   - type: IssueTracker
     url: https://github.com/sozu-proxy/sozu/issues
   - type: ContributionGuide
