@@ -66,112 +66,142 @@
 
 Sōzu is an open-source, fast and lightweight HTTP reverse proxy written in Rust, designed for high-performance traffic management in immutable infrastructure environments. It is configurable at runtime through a protobuf-based IPC protocol without requiring restarts, making it ideal for always-up deployments. Sōzu supports TLS termination, load balancing, and dynamic cluster configuration, and is developed by the sozu-proxy open-source organization on GitHub.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/sozu/refs/heads/main/apis.yml)
+**Areas:** Proxy · Reverse Proxy · Load Balancing · Rust · Open Source
 
-## Scope
+## Sozu on APIs.io
 
-- **Type:** Index
-- **Position:** Consuming
-- **Access:** 3rd-Party
+Everything profiled for Sozu is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/sozu/](https://apis.io/providers/sozu/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Proxy
-- Reverse Proxy
-- Load Balancing
-- Rust
-- Open Source
+- [Sozu Command API](https://apis.io/apis/sozu/sozu-command-api/) — The Sozu Command API provides programmatic control of the Sōzu HTTP reverse proxy at runtime. External tools communicate with the Sozu main process through…
+- [Sozu ACME Integration](https://apis.io/apis/sozu/sozu-acme-api/) — The Sozu ACME integration automates TLS certificate requests from Let's Encrypt and other ACME-enabled certificate authorities. Originally a standalone tool…
+- [Sozu Command Futures API](https://apis.io/apis/sozu/sozu-command-futures-api/) — The sozu-command-futures library provides a futures-based async Rust API for configuring the Sōzu HTTP reverse proxy programmatically. It wraps the…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-27
-- **Modified:** 2026-05-02
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### JSON Schema (2)
 
-### Sozu Command API
+The data models the API reads and writes.
 
-The Sozu Command API provides programmatic control of the Sōzu HTTP reverse proxy at runtime. External tools communicate with the Sozu main process through a secure Unix socket using a protobuf-based binary protocol (IPC). The sozu-command-lib crate ships the protobuf schema, configuration parser, replicated state, channels, and file descriptor passing helpers. This enables dynamic cluster configuration, certificate management, and backend routing changes without restarts.
+- [Sozu Cluster Configuration](https://apis.io/schemas/sozu/sozu-cluster/)
+- [Sozu Frontend Configuration](https://apis.io/schemas/sozu/sozu-frontend/)
 
-- [Documentation](https://docs.sozu.io/)
-- [GitHub](https://github.com/sozu-proxy/sozu)
-- [Getting Started](https://docs.sozu.io/getting-started/)
-- [Configuration Guide](https://github.com/sozu-proxy/sozu/blob/main/doc/configure.md)
-- [JSON Schema - Cluster](https://raw.githubusercontent.com/api-evangelist/sozu/refs/heads/main/json-schema/sozu-cluster-schema.json)
-- [JSON Schema - Frontend](https://raw.githubusercontent.com/api-evangelist/sozu/refs/heads/main/json-schema/sozu-frontend-schema.json)
+#### JSON Structure (1)
 
-### Sozu ACME Integration
+Data models expressed in JSON Structure.
 
-The Sozu ACME integration automates TLS certificate requests from Let's Encrypt and other ACME-enabled certificate authorities. Now integrated directly into the main Sōzu binary.
+- [Sozu Configuration Structure](https://apis.io/json-structure/sozu/sozu-configuration-structure/)
 
-- [GitHub](https://github.com/sozu-proxy/sozu-acme)
+#### JSON-LD (1)
 
-### Sozu Command Futures API
+Linked-data contexts for the provider's vocabulary.
 
-The sozu-command-futures library provides a futures-based async Rust API for configuring the Sōzu HTTP reverse proxy programmatically.
+- [Sozu Context](https://apis.io/jsonld/sozu/sozu-context/)
 
-- [GitHub](https://github.com/sozu-proxy/sozu-command-futures)
+#### Vocabulary (1)
 
-## Common Properties
+The provider's domain terms, defined.
+
+- [Sozu Vocabulary](https://apis.io/vocabularies/sozu/sozu-vocabulary/)
+
+#### Examples (2)
+
+Example requests and responses.
+
+- [Sozu Cluster Example](https://apis.io/examples/sozu/sozu-cluster-example/)
+- [Sozu Frontend Example](https://apis.io/examples/sozu/sozu-frontend-example/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Sozu — jsonschema rules](https://apis.io/rules/sozu/sozu-jsonschema-spectral-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Sozu Domain Security](https://apis.io/security/sozu/sozu-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Sozu Plans Pricing](https://apis.io/plans/sozu/sozu-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Sozu Rate Limits](https://apis.io/rate-limits/sozu/sozu-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Sozu Finops](https://apis.io/finops/sozu/sozu-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.sozu.io/)
 - [Documentation](https://docs.sozu.io/)
-- [GitHub Organization](https://github.com/sozu-proxy)
-- [GitHub Repository](https://github.com/sozu-proxy/sozu)
-- [Releases](https://github.com/sozu-proxy/sozu/releases)
-- [Dashboard](https://github.com/sozu-proxy/dashboard)
-- [Integration Tests](https://github.com/sozu-proxy/sozu-integration-tests)
+- [Blog](https://www.sozu.io/blog/)
+- [GitHub](https://github.com/sozu-proxy)
 
-## Artifacts
+## API Evangelist rating
 
-### JSON Schemas
+**Kin Score 25.4** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-| Schema | Description |
+| Facet | Score |
 |---|---|
-| [sozu-cluster-schema.json](json-schema/sozu-cluster-schema.json) | Backend cluster configuration including load balancing and backend instances |
-| [sozu-frontend-schema.json](json-schema/sozu-frontend-schema.json) | Frontend routing rule binding hostname/path to a backend cluster |
+| Discoverability | 62.5 |
+| Contract quality | 26.7 |
+| Contract governance | 23.5 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 13.1 |
+| Access clarity | 7.9 |
 
-### JSON Structure
+**Agent readiness 0.6** — human-only
 
-| Structure | Description |
+| Agent-readiness dimension | Result |
 |---|---|
-| [sozu-configuration-structure.json](json-structure/sozu-configuration-structure.json) | Hierarchical structure of proxy configuration: listeners, clusters, frontends, and certificates |
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-### JSON-LD Context
+**Regulatory alignment 10.8** — Horizontal (data, software, accessibility, platform)
 
-| Context | Description |
-|---|---|
-| [sozu-context.jsonld](json-ld/sozu-context.jsonld) | Linked data context mapping Sozu proxy configuration vocabulary to schema.org |
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/sozu/](https://apis.io/providers/sozu/).
 
-### Examples
+## How this profile is made
 
-| Example | Description |
-|---|---|
-| [sozu-cluster-example.json](examples/sozu-cluster-example.json) | Sample cluster configuration with two backend instances |
-| [sozu-frontend-example.json](examples/sozu-frontend-example.json) | Sample HTTPS frontend routing rule |
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-### Vocabulary
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Sozu: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-| Vocabulary | Description |
-|---|---|
-| [sozu-vocabulary.yml](vocabulary/sozu-vocabulary.yml) | Domain vocabulary for Sozu reverse proxy configuration and operations |
+## Open an issue
 
-## GitHub Organization Repositories
-
-The [sozu-proxy](https://github.com/sozu-proxy) GitHub organization maintains the following repositories:
-
-| Repository | Description |
-|---|---|
-| [sozu](https://github.com/sozu-proxy/sozu) | Main HTTP reverse proxy binary and library |
-| [sozu-acme](https://github.com/sozu-proxy/sozu-acme) | ACME/Let's Encrypt certificate automation |
-| [sozu-command-futures](https://github.com/sozu-proxy/sozu-command-futures) | Futures-based async Rust API for Sozu configuration |
-| [dashboard](https://github.com/sozu-proxy/dashboard) | Experimental management dashboard |
-| [sozu-integration-tests](https://github.com/sozu-proxy/sozu-integration-tests) | Integration test suite using Testcontainers |
-| [tube-cheese](https://github.com/sozu-proxy/tube-cheese) | Configuration manager based on Traefik patterns |
-| [sozu-demo](https://github.com/sozu-proxy/sozu-demo) | Demo configurations and usage examples |
-
-## Maintainers
-
-**FN:** API Evangelist
-
-**Email:** info@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/sozu/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
